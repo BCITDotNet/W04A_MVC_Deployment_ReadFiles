@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "List";
+    Layout = "~/Views/Shared/_Alan.cshtml";
+    // var processes = (List<System.Diagnostics.Process>) ViewBag.SystemProcesses;
+}
+
+
+<h2>List</h2>
+<ul>
+    @{string[] files = (string[])ViewData["files"];}
+    @foreach (var file in files)
+    {
+        <li>@Html.ActionLink(file, "Content", new { filename = file })</li>
+    }
+</ul>
+
+@Html.Partial("_HelloPartial")
+
+
+
